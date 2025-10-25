@@ -9,10 +9,38 @@ import "./globals.css";
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+// app/page.tsx
+
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "Portfolio Hoàng Phúc",
+  description:
+    "Khám phá các dự án và kỹ năng của tôi trong lĩnh vực phát triển phần mềm.",
+  keywords: ["Hoàng Phúc", "portfolio", "developer", "Next.js", "React"],
+  openGraph: {
+    title: "Portfolio của Hoàng Phúc",
+    description:
+      "Khám phá các dự án và kỹ năng của tôi trong lĩnh vực phát triển phần mềm.",
+    url: "https://portfolio-phuc2px-2025.vercel.app/",
+    siteName: "Portfolio của Hoàng Phúc",
+    images: [
+      {
+        url: "https://portfolio-phuc2px-2025.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ảnh đại diện của Hoàng Phúc",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio của Hoàng Phúc",
+    description:
+      "Khám phá các dự án và kỹ năng của tôi trong lĩnh vực phát triển phần mềm.",
+    images: ["https://portfolio-phuc2px-2025.vercel.app/twitter-image.png"],
+    creator: "@hoangphucdev",
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Nếu muốn thêm meta tags tùy chỉnh khác có thể đặt ở đây */}
+      </head>
       <body className={`font-sans antialiased`}>
         <ThemeProvider
           attribute="class"

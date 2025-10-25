@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { useLanguage } from "@/lib/language-context";
-import { Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Github, Linkedin } from "lucide-react";
 
 interface ContactProps {
   id: string;
@@ -23,8 +23,9 @@ export default function Contact({ id, setActive }: ContactProps) {
   }, [setActive]);
 
   return (
-    <section id={id} ref={ref} className=" px-6 py-20 bg-background">
+    <section id={id} ref={ref} className="px-6 py-20 bg-background">
       <div className="max-w-4xl mx-auto text-center">
+        {/* Tiêu đề */}
         <h2 className="text-4xl font-bold text-foreground mb-6 animate-fade-in">
           {t("letsWorkTogether")}
         </h2>
@@ -32,36 +33,46 @@ export default function Contact({ id, setActive }: ContactProps) {
           {t("contactIntro")}
         </p>
 
+        {/* Contact Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* Email */}
           <a
             href="mailto:hohoangphucjob@gmail.com"
             className="bg-secondary rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1 group"
           >
-            <div className="text-3xl mb-4">✉️</div>
+            <div className="flex justify-center mb-4 text-accent">
+              <Mail className="w-8 h-8" />
+            </div>
             <h3 className="font-semibold text-foreground mb-2">{t("email")}</h3>
             <p className="text-muted-foreground group-hover:text-accent transition-colors">
               hohoangphucjob@gmail.com
             </p>
           </a>
 
+          {/* Phone */}
           <a
             href="tel:0327434821"
             className="bg-secondary rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1 group"
           >
-            <div className="text-3xl mb-4">📱</div>
+            <div className="flex justify-center mb-4 text-accent">
+              <Phone className="w-8 h-8" />
+            </div>
             <h3 className="font-semibold text-foreground mb-2">{t("phone")}</h3>
             <p className="text-muted-foreground group-hover:text-accent transition-colors">
               0327434821
             </p>
           </a>
 
+          {/* GitHub */}
           <a
             href="https://github.com/Minurte1"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-secondary rounded-2xl p-8 hover:shadow-lg transition-all hover:-translate-y-1 group"
           >
-            <div className="text-3xl mb-4">💻</div>
+            <div className="flex justify-center mb-4 text-accent">
+              <Github className="w-8 h-8" />
+            </div>
             <h3 className="font-semibold text-foreground mb-2">
               {t("github")}
             </h3>
@@ -71,6 +82,7 @@ export default function Contact({ id, setActive }: ContactProps) {
           </a>
         </div>
 
+        {/* Social links */}
         <div className="border-t border-border pt-12">
           <p className="text-muted-foreground mb-6">{t("connectSocial")}</p>
           <div className="flex justify-center gap-6">
