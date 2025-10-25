@@ -1,28 +1,29 @@
-"use client"
+"use client";
 
-import { useRef, useEffect } from "react"
+import { useLanguage } from "@/lib/language-context";
+import { useRef, useEffect } from "react";
 
 interface SkillsProps {
-  id: string
-  setActive: () => void
+  id: string;
+  setActive: () => void;
 }
 
 export default function Skills({ id, setActive }: SkillsProps) {
-  const ref = useRef<HTMLDivElement>(null)
-
+  const ref = useRef<HTMLDivElement>(null);
+  const { t, language } = useLanguage();
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setActive()
+          setActive();
         }
       },
-      { threshold: 0.5 },
-    )
+      { threshold: 0.5 }
+    );
 
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [setActive])
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [setActive]);
 
   const skillCategories = [
     {
@@ -31,7 +32,15 @@ export default function Skills({ id, setActive }: SkillsProps) {
     },
     {
       title: "Frontend",
-      skills: ["React.js", "Next.js", "React Native", "Material-UI", "Bootstrap", "SASS", "SEO"],
+      skills: [
+        "React.js",
+        "Next.js",
+        "React Native",
+        "Material-UI",
+        "Bootstrap",
+        "SASS",
+        "SEO",
+      ],
     },
     {
       title: "Backend",
@@ -47,18 +56,30 @@ export default function Skills({ id, setActive }: SkillsProps) {
     },
     {
       title: "Soft Skills",
-      skills: ["Teamwork", "Communication", "Time Management", "Problem Solving"],
+      skills: [
+        "Teamwork",
+        "Communication",
+        "Time Management",
+        "Problem Solving",
+      ],
     },
-  ]
+  ];
 
   return (
     <section id={id} ref={ref} className="md:ml-64 px-6 py-20 bg-secondary">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-foreground mb-12">Skills & Expertise</h2>
+        <h2 className="text-4xl font-bold text-foreground mb-12">
+          {t("mySkills")}
+        </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category) => (
-            <div key={category.title} className="bg-background rounded-2xl p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-foreground mb-4">{category.title}</h3>
+            <div
+              key={category.title}
+              className="bg-background rounded-2xl p-8 hover:shadow-lg transition-shadow"
+            >
+              <h3 className="text-lg font-semibold text-foreground mb-4">
+                {category.title}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
@@ -74,5 +95,5 @@ export default function Skills({ id, setActive }: SkillsProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }
