@@ -45,6 +45,55 @@ export const translations = {
     factFullstack: "Full-stack web development",
     factEcommerce: "E-commerce platforms",
     factRealtime: "Real-time applications",
+
+    workExperience: "Work Experience",
+
+    exp1Title: "Remote Front-End Developer",
+    exp1Description:
+      "Developed e-commerce platform 'Chợ Thông Minh' connecting traditional markets with consumers.",
+    exp1H1:
+      "Built order placement, shopping cart, payment, and order tracking workflows",
+    exp1H2:
+      "Developed CMS with React.js and Material-UI for product, price, and inventory management",
+    exp1H3:
+      "Implemented Node.js + Express.js APIs and microservices architecture",
+    exp1H4: "Created dynamic permission system with MySQL and JWT",
+
+    exp2Title: "Full-Stack Developer Intern",
+    exp2Description:
+      "Built Chành Xe Management system for transportation logistics.",
+    exp2H1: "Designed admin dashboard with Next.js, React, MUI, and PrimeReact",
+    exp2H2:
+      "Developed CRUD APIs with Express.js and MySQL with optimized queries",
+    exp2H3: "Implemented business logic and database optimization",
+
+    myProjects: "Featured Projects",
+    keyFeatures: "Key Features",
+    viewOnGithub: "View on GitHub",
+
+    proj1Title: "PhucShoe2 – E-Commerce Platform",
+    proj1Description:
+      "Modern e-commerce platform specializing in shoes with secure payment integration and real-time chat.",
+    proj1F1: "Advanced filtering and search functionality",
+    proj1F2: "Shopping cart and checkout system",
+    proj1F3: "Payment integration (VNPAY, MoMo)",
+    proj1F4: "Real-time chat with Socket.io",
+    proj1F5: "Rich text editor with React-Quill",
+
+    proj2Title: "Chành Xe Management",
+    proj2Description:
+      "Transportation logistics management system with comprehensive admin dashboard.",
+    proj2F1: "Admin dashboard with real-time data",
+    proj2F2: "CRUD operations for shipments",
+    proj2F3: "Optimized database queries",
+    proj2F4: "User authentication and authorization",
+    letsWorkTogether: "Let's Work Together",
+    contactIntro:
+      "I'm always interested in hearing about new projects and opportunities. Feel free to reach out!",
+    email: "Email",
+    phone: "Phone",
+    github: "GitHub",
+    connectSocial: "Connect with me on social media",
   },
   vi: {
     // Navigation
@@ -92,6 +141,55 @@ export const translations = {
     factFullstack: "Phát triển web full-stack",
     factEcommerce: "Nền tảng thương mại điện tử",
     factRealtime: "Ứng dụng thời gian thực",
+
+    workExperience: "Kinh nghiệm làm việc",
+
+    exp1Title: "Lập trình viên Front-End làm việc từ xa",
+    exp1Description:
+      "Phát triển nền tảng thương mại điện tử 'Chợ Thông Minh' kết nối chợ truyền thống với người tiêu dùng.",
+    exp1H1:
+      "Xây dựng quy trình đặt hàng, giỏ hàng, thanh toán và theo dõi đơn hàng",
+    exp1H2:
+      "Phát triển CMS bằng React.js và Material-UI để quản lý sản phẩm, giá và kho hàng",
+    exp1H3: "Triển khai API Node.js + Express.js theo kiến trúc microservices",
+    exp1H4: "Tạo hệ thống phân quyền động với MySQL và JWT",
+
+    exp2Title: "Thực tập sinh lập trình viên Full-Stack",
+    exp2Description:
+      "Xây dựng hệ thống quản lý Chành Xe cho logistics vận tải.",
+    exp2H1:
+      "Thiết kế dashboard quản trị bằng Next.js, React, MUI và PrimeReact",
+    exp2H2:
+      "Phát triển CRUD API với Express.js và MySQL, tối ưu truy vấn dữ liệu",
+    exp2H3: "Triển khai logic nghiệp vụ và tối ưu cơ sở dữ liệu",
+
+    myProjects: "Dự án nổi bật",
+    keyFeatures: "Tính năng chính",
+    viewOnGithub: "Xem trên GitHub",
+
+    proj1Title: "PhucShoe2 – Nền tảng thương mại điện tử",
+    proj1Description:
+      "Website thương mại điện tử chuyên về giày, tích hợp thanh toán bảo mật và trò chuyện thời gian thực.",
+    proj1F1: "Chức năng lọc và tìm kiếm nâng cao",
+    proj1F2: "Hệ thống giỏ hàng và thanh toán",
+    proj1F3: "Tích hợp thanh toán (VNPAY, MoMo)",
+    proj1F4: "Trò chuyện thời gian thực với Socket.io",
+    proj1F5: "Trình soạn thảo văn bản với React-Quill",
+
+    proj2Title: "Hệ thống quản lý Chành Xe",
+    proj2Description:
+      "Ứng dụng quản lý vận tải với dashboard quản trị toàn diện.",
+    proj2F1: "Bảng điều khiển quản trị với dữ liệu thời gian thực",
+    proj2F2: "Chức năng CRUD cho vận đơn",
+    proj2F3: "Tối ưu hóa truy vấn cơ sở dữ liệu",
+    proj2F4: "Xác thực và phân quyền người dùng",
+    letsWorkTogether: "Hãy cùng hợp tác",
+    contactIntro:
+      "Mình luôn sẵn lòng trao đổi về các dự án và cơ hội mới. Đừng ngần ngại liên hệ nhé!",
+    email: "Email",
+    phone: "Điện thoại",
+    github: "GitHub",
+    connectSocial: "Kết nối với mình qua mạng xã hội",
   },
 };
 
