@@ -101,7 +101,9 @@ export default function Projects({ id, setActive }: ProjectsProps) {
                 {project.tech.map((tch) => (
                   <span
                     key={tch}
-                    className="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full"
+                    className="text-[13px] font-medium px-3 py-1 rounded-full
+             bg-accent/30 text-accent-foreground border border-accent/40
+             hover:bg-accent/40 transition-colors duration-200"
                   >
                     {tch}
                   </span>
