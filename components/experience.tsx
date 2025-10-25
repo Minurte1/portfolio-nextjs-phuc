@@ -52,7 +52,7 @@ export default function Experience({ id, setActive }: ExperienceProps) {
   ];
 
   return (
-    <section id={id} ref={ref} className="md:ml-64 px-6 py-20 bg-background">
+    <section id={id} ref={ref} className="px-6 py-20 bg-background">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-foreground mb-12">
           {t("workExperience")}
