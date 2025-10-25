@@ -51,7 +51,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Nếu muốn thêm meta tags tùy chỉnh khác có thể đặt ở đây */}
+        <link
+          rel="icon"
+          href="/favicon.ico" // thay bằng đường dẫn tới icon của bạn
+          type="image/x-icon"
+        />
       </head>
       <body className={`font-sans antialiased`}>
         <ThemeProvider

@@ -8,6 +8,7 @@ import Experience from "@/components/experience";
 import Projects from "@/components/projects";
 import Contact from "@/components/contact";
 import Taskbar from "@/components/taskbar";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -27,6 +28,7 @@ export default function Home() {
           setActive={() => setActiveSection("projects")}
         />
         <Contact id="contact" setActive={() => setActiveSection("contact")} />
+        <Footer />
       </main>
 
       <Taskbar

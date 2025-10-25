@@ -93,7 +93,14 @@ export const translations = {
     email: "Email",
     phone: "Phone",
     github: "GitHub",
+
     connectSocial: "Connect with me on social media",
+    footerLastUpdate: "This portfolio was last updated on",
+    footerDaysAgo: "days ago",
+    footerDescription:
+      "I always try to update my portfolio at least once a year to reflect new projects, new skills, and career progress. In 2023, I created the first version at",
+    footerPortfolioLinkText: "portfolio-phuc2px.vercel.app",
+    footerRights: "All rights reserved.",
   },
   vi: {
     // Navigation
@@ -190,6 +197,13 @@ export const translations = {
     phone: "Điện thoại",
     github: "GitHub",
     connectSocial: "Kết nối với mình qua mạng xã hội",
+
+    footerLastUpdate: "Portfolio này được cập nhật lần cuối vào",
+    footerDaysAgo: "ngày",
+    footerDescription:
+      "Mình luôn cố gắng cập nhật portfolio ít nhất 1 lần mỗi năm để phản ánh các dự án mới, kỹ năng mới và những bước tiến trong sự nghiệp. Năm 2023, mình đã tạo một phiên bản portfolio đầu tiên trong cuộc dời lập trình viên của mình tại",
+    footerPortfolioLinkText: "portfolio-phuc2px.vercel.app",
+    footerRights: "Mọi quyền được bảo lưu.",
   },
 };
 
