@@ -1,0 +1,41 @@
+export const translations = {
+  en: {
+    home: "Home",
+    about: "About",
+    skills: "Skills",
+    experience: "Experience",
+    projects: "Projects",
+    contact: "Contact",
+    viewMyWork: "View My Work",
+    getInTouch: "Get in Touch",
+    aboutMe: "About Me",
+    mySkills: "My Skills",
+    workExperience: "Work Experience",
+    myProjects: "My Projects",
+    contactMe: "Contact Me",
+    sendMessage: "Send Message",
+    fullStackDeveloper: "Full Stack Developer",
+    description: "Building beautiful and functional web experiences",
+  },
+  vi: {
+    home: "Trang chủ",
+    about: "Về tôi",
+    skills: "Kỹ năng",
+    experience: "Kinh nghiệm",
+    projects: "Dự án",
+    contact: "Liên hệ",
+    viewMyWork: "Xem công việc",
+    getInTouch: "Liên hệ tôi",
+    aboutMe: "Về tôi",
+    mySkills: "Kỹ năng của tôi",
+    workExperience: "Kinh nghiệm làm việc",
+    myProjects: "Dự án của tôi",
+    contactMe: "Liên hệ với tôi",
+    sendMessage: "Gửi tin nhắn",
+    fullStackDeveloper: "Lập trình viên Full Stack",
+    description: "Xây dựng những trải nghiệm web đẹp và chức năng",
+  },
+}
+
+export type Language = keyof typeof translations
+export type TranslationKey = keyof typeof translations.en
