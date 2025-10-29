@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import Skills from "@/components/skills";
-import Experience from "@/components/experience";
-import Projects from "@/components/projects";
-import Contact from "@/components/contact";
+import Hero from "@/components/section-ui/home/hero";
+import About from "@/components/section-ui/home/about";
+import Skills from "@/components/section-ui/home/skills";
+import Experience from "@/components/section-ui/home/experience";
+import Projects from "@/components/section-ui/home/projects";
+import Contact from "@/components/section-ui/home/contact";
 import Taskbar from "@/components/taskbar";
 import Footer from "@/components/footer";
 

@@ -7,7 +7,7 @@ export const translations = {
     experience: "Experience",
     projects: "Projects",
     contact: "Contact",
-
+    music: "Music",
     // Common actions
     viewMyWork: "View My Work",
     getInTouch: "Get in Touch",
@@ -110,7 +110,7 @@ export const translations = {
     experience: "Kinh nghiệm",
     projects: "Dự án",
     contact: "Liên hệ",
-
+    music: "Âm nhạc",
     // Common actions
     viewMyWork: "Xem dự án",
     getInTouch: "Liên hệ",

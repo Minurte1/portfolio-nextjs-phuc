@@ -14,6 +14,7 @@ import {
   Clock,
   MoreVertical,
   X,
+  Music,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/language-context";
@@ -70,6 +71,7 @@ export default function Taskbar({
     { id: "experience", label: t("experience"), icon: Briefcase },
     { id: "projects", label: t("projects"), icon: Briefcase },
     { id: "contact", label: t("contact"), icon: Mail },
+    { id: "music", label: t("music"), icon: Music },
   ];
 
   const handleNavClick = (sectionId: string) => {
