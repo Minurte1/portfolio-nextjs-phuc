@@ -42,7 +42,7 @@ const songs = [
   {
     id: 6,
     title: "Nếu Ngày Ấy",
-    artist: "Unknown",
+    artist: "Soobin Hoàng Sơn",
     src: "/music/Nếu Ngày Ấy.mp3",
     cover:
       "https://i.ytimg.com/vi/BMtaUb-E5Uc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBSznPNJ6zMF5oJ_hNwwLqpZmkIGA",
@@ -76,6 +76,21 @@ export default function MusicLibrary({ setCurrentSong }: any) {
     <section>
       <h2 className="text-3xl font-bold mb-6 text-foreground text-center">
         Thư viện nhạc
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <small className="max-w-210 block text-xs text-foreground text-center opacity-80 font-normal mt-2 leading-relaxed">
+            Mỗi năm thế giới mỗi đổi thay, tâm tính con người cũng theo dòng mà
+            biến chuyển. Giữa vạn nẻo vô thường, vẫn có một tâm hồn tìm về những
+            giai điệu này như tìm về cố hương. Đây là những nốt nhạc được chắt
+            lọc, không phải để chiều lòng thế giới, mà để vỗ về một trái tim
+            luôn cần sự đồng điệu.
+          </small>
+        </div>
       </h2>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -10,7 +10,7 @@ export default function TaskbarMusic({ activeSection, setActiveSection }: any) {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-background/70 backdrop-blur-lg border-t border-border flex justify-around py-3">
+    <div className="fixed bottom-0 left-0 right-0 bg-background/70 backdrop-blur-lg border-t border-border flex justify-around py-3 rounded-t-2xl shadow-lg">
       {tabs.map((tab) => (
         <button
           key={tab.id}

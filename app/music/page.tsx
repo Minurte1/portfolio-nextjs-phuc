@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Taskbar from "@/components/taskbar";
+
 import MusicLibrary from "@/components/section-ui/music/music-library";
 import PlaylistManager from "@/components/section-ui/music/playlist-manager";
 import UploadMusic from "@/components/section-ui/music/upload-music";
@@ -13,7 +13,7 @@ export default function Music() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary flex flex-col">
-      <main className="flex-1 container mx-auto px-4 py-10">
+      <main className="flex-1 container mx-auto px-4 py-10 pb-[calc(10px+77px)]">
         {activeSection === "library" && (
           <MusicLibrary setCurrentSong={setCurrentSong} />
         )}
@@ -22,11 +22,6 @@ export default function Music() {
       </main>
 
       <MusicPlayer song={currentSong} />
-
-      <Taskbar
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-      />
     </div>
   );
 }

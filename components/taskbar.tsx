@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/language-context";
+import { useRouter } from "next/navigation";
 
 interface TaskbarProps {
   activeSection: string;
@@ -28,6 +29,8 @@ export default function Taskbar({
   activeSection,
   setActiveSection,
 }: TaskbarProps) {
+  const router = useRouter();
+
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [time, setTime] = useState<string>("");
@@ -75,6 +78,12 @@ export default function Taskbar({
   ];
 
   const handleNavClick = (sectionId: string) => {
+    if (sectionId === "music") {
+      router.push("/music");
+      setMenuOpen(false);
+      return;
+    }
+
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: "smooth" });
