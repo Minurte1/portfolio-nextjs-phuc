@@ -120,7 +120,7 @@ export default function Taskbar({
         </div>
 
         {/* === NAVIGATION ICONS === */}
-        <div
+        {/* <div
           className={`${
             menuOpen
               ? "flex absolute bottom-full mb-3 left-1/2 -translate-x-1/2 bg-card/90 border border-border/30 backdrop-blur-xl rounded-2xl p-3 shadow-xl gap-2 animate-in slide-in-from-bottom-5"
@@ -142,6 +142,58 @@ export default function Taskbar({
                 title={item.label}
               >
                 <Icon className="w-5 h-5" />
+              </button>
+            );
+          })}
+        </div> */}
+        {/* === NAVIGATION ICONS (với hiệu ứng macOS Dock) === */}
+        <div
+          className={`${
+            menuOpen
+              ? "flex absolute bottom-full mb-3 left-1/2 -translate-x-1/2 bg-card/90 border border-border/30 backdrop-blur-xl rounded-2xl p-3 shadow-xl gap-2 animate-in slide-in-from-bottom-5"
+              : "hidden"
+          } sm:flex sm:static sm:translate-x-0 sm:bottom-auto sm:mb-0 sm:bg-transparent sm:border-0 sm:shadow-none sm:p-0 sm:gap-1`}
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const icons = e.currentTarget.querySelectorAll(".dock-icon");
+
+            icons.forEach((icon: any) => {
+              const iconRect = icon.getBoundingClientRect();
+              const iconCenter = iconRect.left - rect.left + iconRect.width / 2;
+              const distance = Math.abs(mouseX - iconCenter);
+              const scale = Math.max(1, 1.3 - distance / 200);
+              icon.style.transform = `scale(${scale}) translateY(${
+                (1 - scale) * -10
+              }px)`;
+            });
+          }}
+          onMouseLeave={(e) => {
+            const icons = e.currentTarget.querySelectorAll(".dock-icon");
+            icons.forEach((icon: any) => {
+              icon.style.transform = "scale(1) translateY(0)";
+            });
+          }}
+        >
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = activeSection === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`dock-icon relative p-2 sm:p-3 rounded-full transition-transform duration-200 group ${
+                  isActive
+                    ? "bg-accent text-accent-foreground shadow-lg"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                }`}
+                title={item.label}
+                style={{
+                  transformOrigin: "center bottom",
+                  transition: "transform 0.15s ease-out",
+                }}
+              >
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             );
           })}
