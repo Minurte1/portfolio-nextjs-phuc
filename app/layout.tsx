@@ -5,11 +5,10 @@ import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
 import "./globals.css";
+import FloatingCircleMenu from "@/components/floating-music-menu";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-
-// app/page.tsx
 
 export const metadata: Metadata = {
   title: "Portfolio Hoàng Phúc",
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio của Hoàng Phúc",
     images: [
       {
-        url: "https://portfolio-phuc2px-2025.vercel.app/og-image.png",
+        url: "https://portfolio-phuc2px-2025.vercel.app/favicon.ico",
         width: 1200,
         height: 630,
         alt: "Ảnh đại diện của Hoàng Phúc",
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     title: "Portfolio của Hoàng Phúc",
     description:
       "Khám phá các dự án và kỹ năng của tôi trong lĩnh vực phát triển phần mềm.",
-    images: ["https://portfolio-phuc2px-2025.vercel.app/twitter-image.png"],
+    images: ["https://portfolio-phuc2px-2025.vercel.app/favicon.ico"],
     creator: "@hoangphucdev",
   },
 };
@@ -66,6 +65,7 @@ export default function RootLayout({
           <LanguageProvider>
             {children}
             <Analytics />
+            <FloatingCircleMenu />
           </LanguageProvider>
         </ThemeProvider>
       </body>
