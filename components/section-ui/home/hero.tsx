@@ -1,9 +1,14 @@
 "use client";
 
 import { useLanguage } from "@/lib/language-context";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useRef, useState } from "react";
+interface HeroProps {
+  id: string;
+  setActive: () => void;
+}
 
-export default function Hero() {
+export default function Hero({ id, setActive }: HeroProps): JSX.Element {
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const { t, language, setLanguage } = useLanguage();
 
@@ -11,8 +16,24 @@ export default function Hero() {
     setIsVisible(true);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setActive();
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [setActive]);
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-br from-background via-background to-secondary">
+    <section
+      ref={ref}
+      id={id}
+      className="min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-br from-background via-background to-secondary"
+    >
       <div
         className={`max-w-2xl text-center transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
