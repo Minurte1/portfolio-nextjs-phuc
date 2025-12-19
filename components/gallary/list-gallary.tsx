@@ -1,9 +1,9 @@
 "use client";
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { fetchImagesService } from "@/services/gallery-services";
-
+import "../../scss/component/list-gallery.scss";
 interface Image {
   id: number;
   webformatURL: string;
@@ -32,44 +32,28 @@ const ListGallery = () => {
   useEffect(() => {
     fetchImages(query);
   }, [query]);
+
   return (
-    <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-      <div style={{ marginBottom: "20px" }}>
+    <div className="container">
+      <div className="search-bar">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Tìm kiếm ảnh..."
-          style={{
-            padding: "8px",
-            width: "250px",
-            border: "1px solid #e7ccde",
-          }}
         />
       </div>
+
       {selectedImage ? (
-        <div style={{ textAlign: "center" }}>
+        <div className="detail-view">
           <button
             onClick={() => setSelectedImage(null)}
-            style={{
-              marginBottom: "15px",
-              padding: "8px 12px",
-              cursor: "pointer",
-            }}
+            className="back-button"
           >
             ← Back to Gallery
           </button>
-          <div>
-            <img
-              src={selectedImage.largeImageURL}
-              alt={selectedImage.tags}
-              style={{
-                maxWidth: "90%",
-                maxHeight: "70vh",
-                borderRadius: "10px",
-                marginBottom: "10px",
-              }}
-            />
+          <div className="image-detail">
+            <img src={selectedImage.largeImageURL} alt={selectedImage.tags} />
             <p>
               <b>Tags:</b> {selectedImage.tags}
             </p>
@@ -79,37 +63,20 @@ const ListGallery = () => {
           </div>
         </div>
       ) : (
-        // Gallery
         <>
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-                gap: "15px",
-              }}
-            >
+            <div className="masonry-grid">
               {images.map((img) => (
                 <Link
                   key={img.id}
                   href={`/details/${img.id}?url=${encodeURIComponent(
                     img.largeImageURL
                   )}&tags=${encodeURIComponent(img.tags)}`}
-                  style={{ cursor: "pointer" }}
-                  // onClick={() => setSelectedImage(img)}
+                  className="masonry-item"
                 >
-                  <img
-                    src={img.webformatURL}
-                    alt={img.tags}
-                    style={{
-                      width: "100%",
-                      height: "150px",
-                      objectFit: "cover",
-                      borderRadius: "10px",
-                    }}
-                  />
+                  <img src={img.largeImageURL} alt={img.tags} loading="lazy" />
                 </Link>
               ))}
             </div>
