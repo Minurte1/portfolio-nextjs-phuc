@@ -50,6 +50,7 @@ export default function FloatingCircleMenu() {
           { icon: Music, label: "Music", to: "/music" },
           { icon: User, label: "Profile (demo)", to: "/profile" },
           { icon: Settings, label: "Settings (demo)", to: "/settings" },
+          { icon: Library, label: "Library images", to: "/gallery" },
         ];
 
   // Auto close khi chuyển trang
